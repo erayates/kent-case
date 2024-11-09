@@ -43,7 +43,9 @@ function RootComponent() {
             </Breadcrumb>
           </div>
         </header>
-        <Outlet />
+        <div className="max-w-screen-xl w-full mx-auto">
+          <Outlet />
+        </div>
       </SidebarInset>
     </SidebarProvider>
   );
