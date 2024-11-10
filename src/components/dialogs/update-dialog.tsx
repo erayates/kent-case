@@ -31,7 +31,7 @@ export function UpdateDialog({ product }: UpdateDialogProps) {
 
   const onSubmit = async (values: z.infer<typeof productSchema>) => {
     await updateProduct.mutateAsync({
-      id: product.id,
+      id: product.id as string,
       product: values,
     });
   };
