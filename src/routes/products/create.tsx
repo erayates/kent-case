@@ -20,8 +20,6 @@ function RouteComponent() {
     resolver: zodResolver(productSchema),
   });
 
-  console.log(form.formState.errors);
-
   const onSubmit = async (values: z.infer<typeof productSchema>) => {
     await createProduct.mutateAsync(values);
     navigate({ to: "/products" });

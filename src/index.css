@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    font-family: "Host Grotesk", sans-serif;
+  }
+
   :root {
     --radius: 0.5rem;
     --sidebar-background: 0 0% 98%;
