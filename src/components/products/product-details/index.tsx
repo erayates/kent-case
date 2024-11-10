@@ -23,7 +23,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
       </div>
       <div className="flex flex-col md:flex-row max-w-screen-md mx-auto gap-8">
         <div className="space-y-4">
-          <div className="relative min-w-[320px] w-full lg:w-[400px] lg:max-w-[400px]">
+          <div className="relative min-w-[320px] w-full lg:w-[400px] lg:max-w-[400px] h-[350px]">
             <img
               src={product.imageUrl}
               alt="Product Image"
@@ -42,7 +42,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
             ))}
           </div>
         </div>
-        <div className="space-y-6">
+        <div className="space-y-2 md:space-y-6 w-full">
           <div>
             <h1 className="text-3xl font-bold">{product.name}</h1>
             <p className="text-zinc-500 font-semibold">{product.brand}</p>
