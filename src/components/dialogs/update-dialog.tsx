@@ -58,69 +58,67 @@ export function UpdateDialog({ product }: UpdateDialogProps) {
         </DialogHeader>
         <div>
           <FormProvider {...form}>
-            <form
-              onSubmit={form.handleSubmit(onSubmit)}
-              className="flex space-x-2 w-full"
-            >
-              <div className="flex flex-col w-1/2">
-                <FormInput
-                  name="name"
-                  label="Name"
-                  placeholder="Product name"
-                />
-                <FormInput
-                  name="description"
-                  label="Description"
-                  placeholder="Product description"
-                />
-                <FormInput
-                  name="brand"
-                  label="Brand"
-                  placeholder="Brand name"
-                />
+            <form onSubmit={form.handleSubmit(onSubmit)}>
+              <div className="flex flex-col md:flex-row md:space-x-2 w-full mt-4">
+                <div className="flex flex-col w-full md:w-1/2">
+                  <FormInput
+                    name="name"
+                    label="Name"
+                    placeholder="Product name"
+                  />
+                  <FormInput
+                    name="description"
+                    label="Description"
+                    placeholder="Product description"
+                  />
+                  <FormInput
+                    name="brand"
+                    label="Brand"
+                    placeholder="Brand name"
+                  />
 
-                <FormInput
-                  name="price"
-                  label="Price"
-                  placeholder="999.999"
-                  type="number"
-                />
-              </div>
+                  <FormInput
+                    name="price"
+                    label="Price"
+                    placeholder="999.999"
+                    type="number"
+                  />
+                </div>
 
-              <div className="flex flex-col w-1/2">
-                <FormInput
-                  name="imageUrl"
-                  label="Image URL"
-                  placeholder="Enter an image url."
-                />
+                <div className="flex flex-col w-full md:w-1/2">
+                  <FormInput
+                    name="imageUrl"
+                    label="Image URL"
+                    placeholder="Enter an image url."
+                  />
 
-                <FormInput
-                  name="stockQuantity"
-                  label="Stock Quantity"
-                  placeholder="Enter remain stock of the product"
-                />
+                  <FormInput
+                    name="stockQuantity"
+                    label="Stock Quantity"
+                    placeholder="Enter remain stock of the product"
+                  />
 
-                <FormSelect
-                  name="isActive"
-                  label="Status"
-                  options={[
-                    { label: "Active", value: true },
-                    { label: "Passive", value: false },
-                  ]}
-                />
+                  <FormSelect
+                    name="isActive"
+                    label="Status"
+                    options={[
+                      { label: "Active", value: true },
+                      { label: "Passive", value: false },
+                    ]}
+                  />
+                </div>
               </div>
             </form>
           </FormProvider>
         </div>
         <DialogFooter>
-          <DialogClose>
-            <Button type="button" variant="outline">
-              Close
-            </Button>
+          <DialogClose className="text-sm border border-zinc-100 rounded-lg px-4 py-2">
+            Close
           </DialogClose>
           <Button
             type="submit"
             variant="outline"
+            className="bg-blue-500 text-white"
             onClick={form.handleSubmit(onSubmit)}
           >
             Save

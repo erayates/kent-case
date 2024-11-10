@@ -3,7 +3,6 @@ import {
   CardContent,
   CardDescription,
   CardFooter,
-  CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 
@@ -29,8 +28,8 @@ function ProductCard({ name, description, price, imageUrl }: ProductCardProps) {
         <CardTitle className="uppercase font-bold text-xl">{name}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardContent>
-      <CardFooter className="grid absolute bottom-0 right-0 place-items-center py-2 px-6 bg-zinc-800 rounded-br-lg rounded-tl-lg ml-auto text-white font-bold w-fit">
-        <p className="h-full text-2xl">₺ {price}</p>
+      <CardFooter className="grid absolute bg-slate-700 bottom-0 right-0 place-items-center py-2 px-6 rounded-br-lg rounded-tl-lg ml-auto text-white font-bold w-fit">
+        <p className="h-full text-2xl ">₺ {price}</p>
       </CardFooter>
     </Card>
   );

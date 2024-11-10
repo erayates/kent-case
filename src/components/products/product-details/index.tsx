@@ -2,7 +2,6 @@ import { DeleteDialog } from "@/components/dialogs/delete-dialog";
 import { UpdateDialog } from "@/components/dialogs/update-dialog";
 import { cn } from "@/lib/utils";
 import { Product } from "@/types/product";
-import { create } from "domain";
 import React from "react";
 
 interface ProductDetailsProps {
