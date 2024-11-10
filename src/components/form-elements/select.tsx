@@ -24,6 +24,13 @@ const FormSelect: React.FC<CustomSelectProps> = ({
 }) => {
   const { control } = useFormContext();
 
+  const getSelectedLabel = (value: string | number | boolean) => {
+    // Convert the field value to string for comparison
+    const stringValue = String(value);
+    const option = options.find((opt) => String(opt.value) === stringValue);
+    return option?.label || placeholder || "";
+  };
+
   return (
     <FormField
       control={control}
@@ -40,16 +47,18 @@ const FormSelect: React.FC<CustomSelectProps> = ({
                   value === "true" ? true : value === "false" ? false : value
                 );
               }}
-              value={field.value?.toString() ?? ""}
+              value={String(field.value)}
+              defaultValue={String(field.value)}
             >
               <SelectTrigger className="text-muted-foreground text-xs rounded-lg pl-4 pt-8 pb-4 h-auto">
-                {placeholder && <option value="">{placeholder}</option>}
+                {getSelectedLabel(field.value)}
               </SelectTrigger>
               <SelectContent>
                 {options.map((option) => (
                   <SelectItem
-                    key={option.value.toString()}
-                    value={option.value.toString()}
+                    className="h-[32px]"
+                    key={String(option.value)}
+                    value={String(option.value)}
                   >
                     {option.label}
                   </SelectItem>
