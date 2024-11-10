@@ -1,4 +1,5 @@
 import { DeleteDialog } from "@/components/dialogs/delete-dialog";
+import { UpdateDialog } from "@/components/dialogs/update-dialog";
 import { Product } from "@/types/product";
 import React from "react";
 
@@ -13,7 +14,8 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
 }) => {
   return (
     <React.Fragment>
-      <div className="w-full flex justify-end max-w-screen-md mx-auto mb-8">
+      <div className="w-full flex justify-end max-w-screen-md mx-auto mb-8 space-x-2">
+        <UpdateDialog product={product} />
         <DeleteDialog onDelete={onDelete} />
       </div>
       <div className="flex flex-col md:flex-row max-w-screen-md mx-auto gap-8">

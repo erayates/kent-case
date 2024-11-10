@@ -10,4 +10,4 @@ export const productService = {
   update: (id: string, product: Partial<Product>) =>
     api.put<Product>(`/products/${id}`, product),
   delete: (id: string) => api.delete<Product>(`/products/${id}`),
-};
+}; 

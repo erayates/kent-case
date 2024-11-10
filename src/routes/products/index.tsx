@@ -19,8 +19,20 @@ function RouteComponent() {
 
   return (
     <div className="flex flex-1 flex-col p-4 pt-0">
-      <h1 className="text-3xl font-bold">Products</h1>
-      <p className="text-zinc-400">Shows all products on the application.</p>
+      <div className="flex justify-between w-full items-center">
+        <div>
+          <h1 className="text-3xl font-bold">Products</h1>
+          <p className="text-zinc-400">
+            Shows all products on the application.
+          </p>
+        </div>
+        <Link
+          to="/products/create"
+          className="bg-blue-500 h-fit text-white font-semibold px-4 py-2 rounded-md hover:bg-blue-600"
+        >
+          Create New Product
+        </Link>
+      </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
         {products.data?.map((product) => (
