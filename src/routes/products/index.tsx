@@ -27,7 +27,7 @@ function RouteComponent() {
           <Link
             key={product.id}
             to="/products/$productId"
-            params={{ productId: product.id ?? "" }}
+            params={{ productId: product.id }}
           >
             <ProductCard
               key={product.id}

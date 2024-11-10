@@ -16,21 +16,21 @@ interface ProductCardProps {
 
 function ProductCard({ name, description, price, imageUrl }: ProductCardProps) {
   return (
-    <Card>
+    <Card className="h-full relative">
       <div className="h-[200px] bg-zinc-800 rounded-t-lg">
         <img
           src={imageUrl}
           alt={name + "Thumbnail"}
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-center rounded-t-lg"
         />
       </div>
-      <CardHeader className="p-6">
+
+      <CardContent className="p-6 mb-12">
         <CardTitle className="uppercase font-bold text-xl">{name}</CardTitle>
         <CardDescription>{description}</CardDescription>
-      </CardHeader>
-      <CardContent></CardContent>
-      <CardFooter className="grid place-items-center py-2 px-6 bg-zinc-800 rounded-br-lg rounded-tl-lg ml-auto text-white font-bold w-fit">
-        <p className="h-full text-2xl">{price}</p>
+      </CardContent>
+      <CardFooter className="grid absolute bottom-0 right-0 place-items-center py-2 px-6 bg-zinc-800 rounded-br-lg rounded-tl-lg ml-auto text-white font-bold w-fit">
+        <p className="h-full text-2xl">₺ {price}</p>
       </CardFooter>
     </Card>
   );
